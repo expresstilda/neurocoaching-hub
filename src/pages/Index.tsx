@@ -11,6 +11,10 @@ import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
 import Registration from '@/components/Registration';
 import Footer from '@/components/Footer';
+import CourseOverview from '@/components/CourseOverview';
+import WhoIsFor from '@/components/WhoIsFor';
+import HowLearningWorks from '@/components/HowLearningWorks';
+import ExpandedFAQ from '@/components/FAQ/ExpandedFAQ';
 
 const Index = () => {
   useEffect(() => {
@@ -53,11 +57,29 @@ const Index = () => {
     >
       <Header />
       <Hero />
+      <CourseOverview />
       <About />
       <Program />
       <Benefits />
+      <WhoIsFor />
+      <HowLearningWorks />
       <Author />
-      <FAQ />
+      <section id="expanded-faq" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold text-neuro-900 mb-6">
+              Ответы на ваши вопросы
+            </h2>
+          </motion.div>
+          <ExpandedFAQ />
+        </div>
+      </section>
       <Pricing />
       <Registration />
       <Footer />
